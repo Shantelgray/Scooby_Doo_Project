@@ -3,8 +3,9 @@ class CreateMysteries < ActiveRecord::Migration[6.1]
     create_table :mysteries do |t|
       t.string :title
       t.string :location
-      t.integer :date_reported
-      
+      t.datetime :date_reported
+
       t.timestamps
+    end
   end
 end
