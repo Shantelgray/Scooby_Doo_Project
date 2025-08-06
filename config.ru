@@ -15,3 +15,5 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+run MonstersController
+run MysteriesController
