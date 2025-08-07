@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 require "rest-client"
 require "json"
 
 class APIClient
-  def initialize(base_url = "http://localhost:9292")
-    @base_url = base_url
+  def initialize
+    @base_url = "http://localhost:9292"
   end
 
   def get_monsters
