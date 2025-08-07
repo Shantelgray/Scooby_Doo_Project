@@ -8,7 +8,7 @@ class CLIInterface
     @prompt = TTY::Prompt.new
   end
 
-  def slow_print(text)
+  def slow_print(text, delay = 0.08)
     text.each_char do |char|
       print char
       sleep(delay)
@@ -17,7 +17,7 @@ class CLIInterface
   end
 
   def run
-    slow_print("ZOINKS Scooby-Doo, where are you?")
+    slow_print("ZOINKS Scooby-Doo, Where are you?")
     puts "🐕 Welcome to the Scooby Doo  Mystery Machine Tracker! 🚐"
     puts "🦴 This application connects to your Sinatra API 🦴"
     puts "🔍 Make sure your API server is running on http://localhost:9292 🔍"

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-require_relative "api_client"
-require_relative "cli_interface"
+require_relative "lib/api_client"
+require_relative "lib/cli_interface"
 require "rest-client"
 require "json"
 
