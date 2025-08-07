@@ -91,42 +91,42 @@ class CLIInterface
   end
 
   def display_main_menu
-    puts "\n👻 Welcome to the Scooby-Doo Mystery Tracker 👻"
+    puts "\n� Welcome to the Scooby-Doo Mystery Tracker 🦴"
     puts "==========================================="
-    puts "MONSTER COMMANDS"
-    puts "[1] ➤ Mystery Menu"
-    puts "[2] ➤ Monster Menu"
-    puts "[3] ➤ Exit"
+    puts "🔍 MYSTERY COMMANDS 🔍"
+    puts "[1] ➤ Mystery Menu 🗝️"
+    puts "[2] ➤ Monster Menu 👻"
+    puts "[3] ➤ Exit 🚐"
     print "\nChoose an option: "
   end
 
   def display_mystery_menu
-    puts "\n🕵️ Mystery Menu"
+    puts "\n�️ Mystery Menu 🔍"
     puts "-----------------"
-    puts "[1] View All Mysteries"
-    puts "[2] Add a New Mystery"
-    puts "[3] Update a Mystery"
-    puts "[4] Delete a Mystery"
-    puts "[5] Back to Main Menu"
+    puts "[1] View All Mysteries 📜"
+    puts "[2] Add a New Mystery 🆕"
+    puts "[3] Update a Mystery 📝"
+    puts "[4] Delete a Mystery 🗑️"
+    puts "[5] Back to Main Menu 🔙"
     print "\nChoose an option: "
   end
 
   def display_monster_menu
-    puts "\n👹 Monster Menu"
+    puts "\n� Monster Menu 👾"
     puts "-----------------"
-    puts "[1] View All Monsters"
-    puts "[2] View Monsters by Disguise"
-    puts "[3] Add a New Monster"
-    puts "[4] Update a Monster"
-    puts "[5] Delete a Monster"
-    puts "[6] Back to Main Menu"
+    puts "[1] View All Monsters 🎭"
+    puts "[2] View Monsters by Disguise 🎪"
+    puts "[3] Add a New Monster 🆕"
+    puts "[4] Update a Monster 📝"
+    puts "[5] Delete a Monster 🗑️"
+    puts "[6] Back to Main Menu 🔙"
     print "\nChoose an option "
   end
 
   def run
-    puts "Welcome to your CLI Application!"
-    puts "This application connects to your Sinatra API."
-    puts "Make sure your API server is running on http://localhost:9292"
+    puts "🐕 Scooby-Dooby-Doo! Welcome to the Mystery Machine! 🚐"
+    puts "🦴 This application connects to your Sinatra API 🦴"
+    puts "🔍 Make sure your API server is running on http://localhost:9292 🔍"
     puts
 
     menu_loop
@@ -143,7 +143,7 @@ class CLIInterface
       when "2"
         monster_menu
       when "3"
-        puts "👋 Goodbye!"
+        puts "� Scooby-Dooby-Doo, Goodbye to you! 🦴"
         break
       else
         puts "❗ Invalid option. Please try again."
@@ -238,7 +238,7 @@ class CLIInterface
   end
 
   def create_monster
-    puts "\n=== Create New Monster ==="
+    puts "\n===👺👺👺 Create New Monster 👺👺👺==="
 
     print "Name: "
     name = gets.chomp
@@ -262,7 +262,7 @@ class CLIInterface
   end
 
   def create_mystery
-    puts "\n=== Create New Mystery ==="
+    puts "\n===🔍🔍🔍 Create New Mystery 🔍🔍🔍==="
 
     monsters_response = @api_client.get_monsters
     if monsters_response.is_a?(Array) && !monsters_response.empty?

@@ -40,7 +40,7 @@ gem "require_all"
 # HTTP client for making requests from CLI
 # https://github.com/rest-client/rest-client
 gem "rest-client"
-
+gem "tty-prompt"
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry"
