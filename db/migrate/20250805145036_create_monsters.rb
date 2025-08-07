@@ -3,7 +3,7 @@ class CreateMonsters < ActiveRecord::Migration[6.1]
     create_table :monsters do |t|
       t.string :name
       t.string :disguise_as
-      t.references :mystery, null: false, foreign_key: true
+      t.references :mystery, null: true, foreign_key: true
 
       t.timestamps
     end
