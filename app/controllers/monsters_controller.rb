@@ -20,7 +20,8 @@ class MonstersController < Sinatra::Base
   post "/monsters" do
     monster = Monster.create(
       name: params[:name],
-      disguise_as: params[:disguise_as]
+      disguise_as: params[:disguise_as],
+      mystery_id: params[:mystery_id]
     )
     monster.to_json
   end

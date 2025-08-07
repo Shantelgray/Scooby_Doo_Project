@@ -18,27 +18,26 @@ class MysteriesController < Sinatra::Base
   end
 
   post "/mysteries" do
-    mystery = Mystery.create(
-      title: params[:title],
-      location: params[:location],
-      date_reported: params[:date_reported],
-      monster_id: params[:monster_id]
-    )
-    mystery.to_json
-  rescue ActiveRecord::RecordNotFound
-    status 404
-    { error: "Mystery not found" }.to_json
+    mystery = Mystery.new(mystery_params)
+
+    if mystery.save
+      status 201
+      mystery.to_json(include: :monsters)
+    else
+      status 422
+      { error: mystery.errors.full_messages }.to_json
+    end
   end
 
   patch "/mysteries/:id" do
     mystery = Mystery.find(params[:id])
-    mystery.update(
-      title: params[:title],
-      location: params[:location],
-      date_reported: params[:date_reported],
-      monster_id: params[:monster_id]
-    )
-    mystery.to_json
+
+    if mystery.update(mystery_params)
+      mystery.to_json(include: :monsters)
+    else
+      status 422
+      { error: mystery.errors.full_messages }.to_json
+    end
   rescue ActiveRecord::RecordNotFound
     status 404
     { error: "Mystery not found" }.to_json
@@ -47,9 +46,19 @@ class MysteriesController < Sinatra::Base
   delete "/mysteries/:id" do
     mystery = Mystery.find(params[:id])
     mystery.destroy
-    mystery.to_json
+    status 204
   rescue ActiveRecord::RecordNotFound
     status 404
     { error: "Mystery not found" }.to_json
+  end
+
+  private
+
+  def mystery_params
+    {
+      title: params[:title],
+      location: params[:location],
+      date_reported: params[:date_reported],
+    }
   end
 end
