@@ -309,6 +309,7 @@ class CLIInterface
 
   def delete_mystery
     view_all_mysteries
+    print "Reminder❗❗ Once Mystery is Deleted so will the MONSTER❗"
     print "\nEnter the ID of the mystery to delete: "
     id = gets.chomp.to_i
 
