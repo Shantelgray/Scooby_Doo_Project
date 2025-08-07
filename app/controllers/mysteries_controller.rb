@@ -14,7 +14,7 @@ class MysteriesController < Sinatra::Base
     mystery.to_json(include: :monsters)
   rescue ActiveRecord::RecordNotFound
     status 404
-    { error: "Mystery not found" }.to_json
+    { error: "Like... No Mystery Dude" }.to_json
   end
 
   post "/mysteries" do
@@ -40,7 +40,7 @@ class MysteriesController < Sinatra::Base
     end
   rescue ActiveRecord::RecordNotFound
     status 404
-    { error: "Mystery not found" }.to_json
+    { error: "Like... No Mystery Dude" }.to_json
   end
 
   delete "/mysteries/:id" do
@@ -49,7 +49,7 @@ class MysteriesController < Sinatra::Base
     status 204
   rescue ActiveRecord::RecordNotFound
     status 404
-    { error: "Mystery not found" }.to_json
+    { error: "Like.. No Mystery Dude" }.to_json
   end
 
   private

@@ -9,7 +9,7 @@ class MonstersController < Sinatra::Base
     monster.to_json(include: :mystery)
   rescue ActiveRecord::RecordNotFound
     status 404
-    { error: "Monster not found" }.to_json
+    { error: "Like... No Monster Dude" }.to_json
   end
 
   get "/monsters/by_disguise_as" do
@@ -35,7 +35,7 @@ class MonstersController < Sinatra::Base
     monster.to_json
   rescue ActiveRecord::RecordNotFound
     status 404
-    { error: "Monster not found" }.to_json
+    { error: "Like... No Monster Dude" }.to_json
   end
 
   delete "/monsters/:id" do
@@ -44,6 +44,6 @@ class MonstersController < Sinatra::Base
     monster.to_json
   rescue ActiveRecord::RecordNotFound
     status 404
-    { error: "Monster not found" }.to_json
+    { error: "Like... No Monster Dude" }.to_json
   end
 end
