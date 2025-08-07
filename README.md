@@ -1,4 +1,4 @@
-# Phase 3 Project Guidelines
+# Scooby Doo Mystery Tracker
 
 ## Learning Goals
 

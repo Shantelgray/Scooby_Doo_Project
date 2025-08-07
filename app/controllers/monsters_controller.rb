@@ -30,7 +30,8 @@ class MonstersController < Sinatra::Base
     monster = Monster.find(params[:id])
     monster.update(
       name: params[:name],
-      disguise_as: params[:disguise_as]
+      disguise_as: params[:disguise_as],
+      mystery_id: params[:mystery_id]
     )
     monster.to_json
   rescue ActiveRecord::RecordNotFound

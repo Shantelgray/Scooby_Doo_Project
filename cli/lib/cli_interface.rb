@@ -13,11 +13,10 @@ class CLIInterface
       print char
       sleep(delay)
     end
-    puts "Like, man, I'm so scared!"
   end
 
   def run
-    slow_print("ZOINKS Scooby-Doo, Where are you?")
+    slow_print("Like, man, I'm so scared! ZOINKS Scooby-Doo, Where are you?")
     puts "🐕 Welcome to the Scooby Doo  Mystery Machine Tracker! 🚐"
     puts "🦴 This application connects to your Sinatra API 🦴"
     puts "🔍 Make sure your API server is running on http://localhost:9292 🔍"
